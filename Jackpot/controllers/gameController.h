@@ -7,7 +7,7 @@ private:
 	int money;
 	int goal;
 
-	void init();
+	void restart();
 public:
 	GameController();
 	void startGame();

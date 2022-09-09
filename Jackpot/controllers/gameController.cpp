@@ -6,13 +6,14 @@
 #include "../models/dice/dices/d6.h"
 #include "../utility/utils.h"
 
-void GameController::init() {
+void GameController::restart() {
 	this->money = 5;
 	this->goal = 7;
 }
 
 GameController::GameController() {
-	this->init();
+	this->money = 5;
+	this->goal = 7;
 }
 
 void GameController::startGame() {
@@ -40,7 +41,7 @@ void GameController::startGame() {
 			Utils::say("You won ! " + std::to_string(this->money / 2) + "$ -> " + std::to_string(this->money) + "$");
 		} else {
 			Utils::say("You lost ! " + std::to_string(this->money) + "$ -> 0$");
-			this->init();
+			this->restart();
 		}
 
 		std::cout << "Press Enter to continue, any other key to stop.." << std::endl;
