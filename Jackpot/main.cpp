@@ -1,16 +1,7 @@
 #include <iostream>
 #include <random>
 #include <string>
-
-int getRandomInt(int min, int max) {
-	std::random_device os_seed;
-	uint_least32_t seed = os_seed();
-
-	std::mt19937 generator(seed);
-	std::uniform_int_distribution<uint_least32_t> distribute(min, max);
-
-	return (int)distribute(generator);
-}
+#include "utility/utils.h"
 
 struct Dice {
 	int min;
@@ -22,7 +13,7 @@ struct Dice {
 	}
 
 	int throwDice() const {
-		return getRandomInt(this->min, this->max);
+		return Utils::getRandomInt(this->min, this->max);
 	}
 };
 
