@@ -4,9 +4,15 @@ This is a list of programs related to an exercise about jackpot.
 
 # Requirement
 
-You need [Visual Studio 2022](https://visualstudio.microsoft.com/fr/downloads/) to open the project.
+You need [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/) or [CLion](https://www.jetbrains.com/clion/download/#section=windows) to open the project.
+
+## Visual Studio 2022
 
 Start by opening [Jackpot solution](./Jackpot.sln).
+
+## CLion
+
+Start by opening any project by folder in [Jackpot](./Jackpot).
 
 # [Jackpot](./Jackpot)
 
