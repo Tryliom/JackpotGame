@@ -11,4 +11,13 @@ namespace Utils {
 	 * @return
 	 */
 	int getRandomInt(int min, int max);
+	/**
+	 * @brief Clear the console.
+	 */
+	void clearConsole();
+	/**
+	 * @brief Display a message in the console, return to the line.
+	 * @param message The message to display.
+	 */
+	void say(const std::string& message);
 };

@@ -7,6 +7,7 @@ include_directories(.)
 include_directories(Jackpot/models/dice)
 include_directories(Jackpot/models/dice/dices)
 include_directories(Jackpot/utility)
+include_directories(Jackpot/controllers)
 
 add_executable(Jackpot
         Jackpot/models/dice/dices/d6.cpp
@@ -15,4 +16,6 @@ add_executable(Jackpot
         Jackpot/models/dice/dice.h
         Jackpot/utility/utils.cpp
         Jackpot/utility/utils.h
+        Jackpot/controllers/gameController.cpp
+        Jackpot/controllers/gameController.h
         Jackpot/main.cpp)
