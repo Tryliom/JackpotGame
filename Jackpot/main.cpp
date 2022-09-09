@@ -1,21 +1,7 @@
 #include <iostream>
 #include <random>
 #include <string>
-#include "utility/utils.h"
-
-struct Dice {
-	int min;
-	int max;
-
-	Dice(int min, int max) {
-		this->min = min;
-		this->max = max;
-	}
-
-	int throwDice() const {
-		return Utils::getRandomInt(this->min, this->max);
-	}
-};
+#include "dice/dice.h"
 
 int main() {
 	int playerMoney = 5;
