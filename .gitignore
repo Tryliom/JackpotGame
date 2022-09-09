@@ -5,6 +5,7 @@
 
 # Intellij IDEA
 .idea/
+cmake-build-debug/
 
 # User-specific files
 *.rsuser

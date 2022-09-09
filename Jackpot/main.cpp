@@ -1,12 +1,16 @@
 #include <iostream>
-#include <random>
 #include <string>
-#include "dice/dice.h"
+#include <vector>
+#include "models/dice/dice.h"
+#include "models/dice/dices/d6.h"
 
 int main() {
 	int playerMoney = 5;
 	int score = 7;
-	Dice diceA(1, 6), diceB(1, 6);
+	std::vector<Dice*> dices = {
+		new D6(),
+		new D6()
+	};
 
 	while (true) {
 		system("cls");
@@ -17,15 +21,18 @@ int main() {
 		std::cin >> yesNo;
 
 		if (yesNo == "y") {
-			int total = diceA.throwDice() + diceB.throwDice();
+			int total = 0;
+			for (Dice* dice: dices) {
+				dice->throwDice();
+				total += dice->getValue();
+			}
 			std::cout << "You have throw 2 dices making a total of " << std::to_string(total) << std::endl;
 			if (total > score) {
 				score = total;
 				playerMoney *= 2;
 				std::cout << "You win !" << std::endl;
 				std::cout << std::to_string(playerMoney / 2) << " -> " << std::to_string(playerMoney) << std::endl;
-			}
-			else {
+			} else {
 				std::cout << "Lose.." << std::endl;
 				playerMoney = 5;
 				score = 7;
@@ -33,16 +40,12 @@ int main() {
 
 			std::cout << "Do you want to continue ? [y/n]" << std::endl;
 			std::cin >> yesNo;
-			if (yesNo == "y")
-			{
+			if (yesNo == "y") {
 				continue;
-			}
-			else
-			{
+			} else {
 				break;
 			}
-		}
-		else {
+		} else {
 			break;
 		}
 	}

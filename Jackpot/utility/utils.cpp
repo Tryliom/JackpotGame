@@ -1,4 +1,5 @@
-#include "utils"
+#include <random>
+#include "utils.h"
 
 namespace Utils {
 	int getRandomInt(int min, int max) {
@@ -11,4 +12,3 @@ namespace Utils {
 		return (int) distribute(generator);
 	}
 };
-}

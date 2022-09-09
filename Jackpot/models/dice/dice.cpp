@@ -1,4 +1,5 @@
 #include "dice.h"
+#include "utils.h"
 
 Dice::Dice(int min, int max) {
 	this->min = min;
