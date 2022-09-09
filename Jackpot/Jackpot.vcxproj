@@ -127,7 +127,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="controllers\gameController.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="models\dice\dice.cpp" />
+    <ClCompile Include="models\dice\dices\d6.cpp" />
+    <ClCompile Include="utility\utils.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="controllers\gameController.h" />
+    <ClInclude Include="models\dice\dice.h" />
+    <ClInclude Include="models\dice\dices\d6.h" />
+    <ClInclude Include="utility\utils.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="CMakeLists.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
