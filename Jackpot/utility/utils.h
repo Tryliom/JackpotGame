@@ -1,4 +1,5 @@
 #pragma once
+#include <string>
 
 /**
  * @brief A namespace for utility functions.

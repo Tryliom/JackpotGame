@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <limits>
 #include "gameController.h"
 #include "../models/dice/dice.h"
 #include "../models/dice/dices/d6.h"
@@ -43,11 +44,9 @@ void GameController::startGame() {
 		}
 
 		std::cout << "Press Enter to continue, any other key to stop.." << std::endl;
-		//TODO: Need to fix the double enter bug
-		std::string confirm;
-		std::cin >> confirm;
-		if (!confirm.empty()) {
+		if (std::cin.peek() != '\n') {
 			break;
 		}
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	}
 }
