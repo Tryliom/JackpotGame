@@ -5,9 +5,9 @@
  */
 class Dice {
 private:
-	int min;
-	int max;
-	int value;
+	int _min;
+	int _max;
+	int _value;
 
 public:
 	/**
@@ -15,16 +15,16 @@ public:
 	 * @param min The minimum value of the dice.
 	 * @param max The maximum value of the dice.
 	 */
-	Dice(int min, int max);
+	Dice(const int min, const int max);
 
 	/**
 	 * @brief Throw the dice and get a random value between min and max.
 	 */
-	void throwDice();
+	void Roll();
 
 	/**
 	 * @brief Get the value of the dice.
 	 * @return int The value of the dice.
 	 */
-	int getValue();
+	int GetValue() const;
 };

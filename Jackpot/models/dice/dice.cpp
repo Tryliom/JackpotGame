@@ -1,16 +1,16 @@
 #include "dice.h"
 #include "../../utility/utils.h"
 
-Dice::Dice(int min, int max) {
-	this->min = min;
-	this->max = max;
-	this->value = 0;
+Dice::Dice(const int min, const int max) {
+	this->_min = min;
+	this->_max = max;
+	this->_value = 0;
 }
 
-void Dice::throwDice() {
-	this->value = Utils::getRandomInt(this->min, this->max);
+void Dice::Roll() {
+	this->_value = Utils::GetRandomInt(this->_min, this->_max);
 }
 
-int Dice::getValue() {
-	return this->value;
+int Dice::GetValue() const {
+	return this->_value;
 }

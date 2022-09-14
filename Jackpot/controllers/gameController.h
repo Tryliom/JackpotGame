@@ -4,11 +4,14 @@
 
 class GameController {
 private:
-	int money;
-	int goal;
+	int _money;
+	int _goal;
 
+	/**
+	 * @brief Reset values to default.
+	 */
 	void restart();
 public:
 	GameController();
-	void startGame();
+	void StartGame();
 };

@@ -7,44 +7,57 @@
 #include "../utility/utils.h"
 
 void GameController::restart() {
-	this->money = 5;
-	this->goal = 7;
+	this->_money = 5;
+	this->_goal = 7;
 }
 
 GameController::GameController() {
-	this->money = 5;
-	this->goal = 7;
+	this->_money = 5;
+	this->_goal = 7;
 }
 
-void GameController::startGame() {
-	std::vector<Dice*> dices = {
-			new D6(),
-			new D6()
+void GameController::StartGame() {
+	const std::vector<Dice*> dices = {
+		new D6(),
+		new D6()
 	};
 
 	while (true) {
-		Utils::clearConsole();
-		Utils::say("Money: " + std::to_string(this->money) + "$");
-		Utils::say("You need to make more than " + std::to_string(this->goal) + " with 2 dices of 6 to double your money");
-		Utils::say("Press Enter to roll the dices..");
+		// Clear the console
+		Utils::ClearConsole();
+		// Display all information for the player
+		Utils::Say("Money: " + std::to_string(this->_money) + "$");
+		Utils::Say("You need to make more than " + std::to_string(this->_goal) + " with 2 dices of 6 to double your money");
+		// Ask the player to press Enter key to continue
+		Utils::Say("Press Enter to roll the dices..");
 		std::cin.ignore();
 
+		// Roll the dices
 		int total = 0;
+		std::string allDiceRolled;
 		for (Dice* dice: dices) {
-			dice->throwDice();
-			total += dice->getValue();
+			dice->Roll();
+			if (!allDiceRolled.empty())
+				allDiceRolled += " + ";
+			allDiceRolled += std::to_string(dice->GetValue());
+			total += dice->GetValue();
 		}
-		Utils::say("You rolled " + std::to_string(total));
-		if (total > this->goal) {
-			this->goal = total;
-			this->money *= 2;
-			Utils::say("You won ! " + std::to_string(this->money / 2) + "$ -> " + std::to_string(this->money) + "$");
+		// Show to the player the result of the dices rolled
+		Utils::Say("You rolled " + std::to_string(dices.size()) + " dices making: " + allDiceRolled + " = " + std::to_string(total));
+		// Check if he win or lose
+		if (total > this->_goal) {
+			this->_goal = total;
+			this->_money *= 2;
+			Utils::Say("You won ! " + std::to_string(this->_money / 2) + "$ -> " + std::to_string(this->_money) + "$");
 		} else {
-			Utils::say("You lost ! " + std::to_string(this->money) + "$ -> 0$");
+			Utils::Say("You lost ! " + std::to_string(this->_money) + "$ -> 0$");
+			// Restart data
 			this->restart();
 		}
 
+		// Ask the player if he want to continue or not
 		std::cout << "Press Enter to continue, any other key to stop.." << std::endl;
+		// If the key press is not Enter, break, otherwise continue
 		if (std::cin.peek() != '\n') {
 			break;
 		}
