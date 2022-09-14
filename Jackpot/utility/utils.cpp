@@ -18,7 +18,7 @@ namespace Utils {
 			// For windows
 			system("cls");
 		#elif defined (__LINUX__) || defined(__gnu_linux__) || defined(__linux__) || defined (__APPLE__)
-			// For linux and Apple
+			// For linux or Apple
 			system("clear");
 		#endif
 	}

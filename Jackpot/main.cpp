@@ -1,5 +1,6 @@
 #include "controllers/gameController.h"
 
 void main() {
-	GameController().StartGame();
+	GameController gm;
+	gm.startGame();
 }

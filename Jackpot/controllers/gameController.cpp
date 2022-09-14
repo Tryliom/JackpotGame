@@ -16,7 +16,7 @@ GameController::GameController() {
 	this->_goal = 7;
 }
 
-void GameController::StartGame() {
+void GameController::startGame() {
 	const std::vector<Dice*> dices = {
 		new D6(),
 		new D6()
@@ -61,6 +61,6 @@ void GameController::StartGame() {
 		if (std::cin.peek() != '\n') {
 			break;
 		}
-		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		std::cin.ignore();
 	}
 }

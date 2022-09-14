@@ -13,5 +13,5 @@ private:
 	void restart();
 public:
 	GameController();
-	void StartGame();
+	void startGame();
 };
