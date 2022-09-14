@@ -4,11 +4,11 @@
 
 class GameController {
 private:
-	int money;
-	int goal;
+	int _money;
+	int _goal;
 
 	void restart();
 public:
 	GameController();
-	void startGame();
+	void StartGame();
 };

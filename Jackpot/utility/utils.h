@@ -9,16 +9,16 @@ namespace Utils {
 	 * @brief Get a random integer between min and max included.
 	 * @param min The minimum value
 	 * @param max The maximum value
-	 * @return
+	 * @return int A random integer between min and max included.
 	 */
-	int getRandomInt(int min, int max);
+	int GetRandomInt(const int min, const int max);
 	/**
 	 * @brief Clear the console.
 	 */
-	void clearConsole();
+	void ClearConsole();
 	/**
 	 * @brief Display a message in the console, return to the line.
 	 * @param message The message to display.
 	 */
-	void say(const std::string& message);
+	void Say(const std::string& message);
 };
